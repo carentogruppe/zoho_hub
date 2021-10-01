@@ -29,7 +29,7 @@ module ZohoHub
 
     DEFAULT_DOMAIN = 'https://www.zohoapis.eu'
 
-    BASE_PATH = '/crm/v2/'
+    BASE_PATH = ENV['ZOHO_BASE_PATH'] || '/crm/v2/'
 
     def initialize(access_token: nil, api_domain: nil, expires_in: 3600, refresh_token: nil)
       @access_token = access_token

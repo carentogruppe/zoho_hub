@@ -8,6 +8,7 @@
 /spec/reports/
 /tmp/
 /cache/*
+.idea
 Gemfile.lock
 
 # rspec failure tracking
