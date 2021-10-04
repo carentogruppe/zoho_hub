@@ -106,7 +106,7 @@ module ZohoHub
     end
 
     def base_url
-      Addressable::URI.join(@api_domain, BASE_PATH).to_s
+      Addressable::URI.join(@api_domain, @base_path).to_s
     end
 
     # The authorization header that must be added to every request for authorized requests.
