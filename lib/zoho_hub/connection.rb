@@ -29,13 +29,14 @@ module ZohoHub
 
     DEFAULT_DOMAIN = 'https://www.zohoapis.eu'
 
-    BASE_PATH = ENV['ZOHO_BASE_PATH'] || '/crm/v2/'
+    DEFAULT_BASE_PATH = '/crm/v2/'
 
-    def initialize(access_token: nil, api_domain: nil, expires_in: 3600, refresh_token: nil)
+    def initialize(access_token: nil, api_domain: nil, expires_in: 3600, refresh_token: nil, base_path: nil)
       @access_token = access_token
       @expires_in = expires_in
       @api_domain = api_domain || self.class.infer_api_domain
       @refresh_token ||= refresh_token # do not overwrite if it's already set
+      @base_path = base_path || DEFAULT_BASE_PATH
     end
 
     def get(path, params = {})
